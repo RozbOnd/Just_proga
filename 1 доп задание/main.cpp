@@ -24,8 +24,12 @@ istream& operator >> (istream &is, Vector &vec){
         delete[] vec.cords;
         vec.size = 0;
     }
+    cout << "Введите размер вектора: ";
+    is >> vec.size;
+    cout << "\nВведите координаты вектора: ";
     for (int i = 0; i < vec.size; i++)
         is >> vec.cords[i];
+    cout << '\n';
 }
 
 ostream& operator << (ostream &os, const Vector &vec){
@@ -58,18 +62,9 @@ int scalar_mul(Vector v1, Vector v2) {
 
 int main() {
     setlocale(LC_ALL, "Russian");
-    int n;
-    cout << "Введите размер векторов: ";
-    cin >> n;
 
-    Vector a(n), b(n), c(n);
-
-    cout << "Введите элементы вектора a:\n";
-    cin >> a;
-    cout << "Введите элементы вектора b:\n";
-    cin >> b;
-    cout << "Введите элементы вектора c:\n";
-    cin >> c;
+    Vector a, b, c;
+    cin >> a >> b >> c;
 
     int scal = scalar_mul(b, c);
     cout << "(b * c)\n" << scal << '\n';
