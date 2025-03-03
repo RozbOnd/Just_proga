@@ -6,7 +6,9 @@ struct Vector {
     int size;
     int* cords;
 
-    Vector(int sz) : size(sz) {
+    Vector(): size{0}, cords{NULL}{}
+
+    Vector(int sz) : size{sz} {
         cords = new int[sz];
     }
 
@@ -26,10 +28,12 @@ istream& operator >> (istream &is, Vector &vec){
     }
     cout << "Введите размер вектора: ";
     is >> vec.size;
+    vec.cords = new int[vec.size];
     cout << "\nВведите координаты вектора: ";
     for (int i = 0; i < vec.size; i++)
         is >> vec.cords[i];
     cout << '\n';
+    return is;
 }
 
 ostream& operator << (ostream &os, const Vector &vec){
@@ -37,6 +41,7 @@ ostream& operator << (ostream &os, const Vector &vec){
     for (int i = 0; i < vec.size; i++)
         os << vec.cords[i] << " ";
     os << ")\n";
+    return os;
 }
 
 Vector add(Vector v1, Vector v2) {
