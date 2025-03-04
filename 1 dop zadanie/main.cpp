@@ -22,7 +22,7 @@ struct Vector {
 };
 
 istream& operator >> (istream &is, Vector &vec){
-    if (vec.cords != NULL) {
+    if (vec.cords != nullptr) {
         delete[] vec.cords;
         vec.size = 0;
     }
