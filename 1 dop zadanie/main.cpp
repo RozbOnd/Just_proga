@@ -6,19 +6,19 @@ struct Vector {
     int size;
     int* cords;
 
-    Vector(): size{0}, cords{NULL}{}
+    Vector(): size{0}, cords{nullptr}{}
 
     Vector(int sz) : size{sz} {
         cords = new int[sz];
     }
 
-    ~Vector() {
-        if (cords != NULL){
-            delete[] cords;
-            cords = NULL;
-            size = 0;
-        }
-    }
+    // ~Vector() {
+    //     if (cords != nullptr){
+    //         delete[] cords;
+    //         cords = nullptr;
+    //         size = 0;
+    //     }
+    // }
 };
 
 istream& operator >> (istream &is, Vector &vec){
