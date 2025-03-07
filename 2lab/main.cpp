@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -196,3 +197,6 @@ int main() {
 
 	return 0;
 }
+=======
+
+>>>>>>> 66d86d61117a1576a3e99af4a25861c434c382af
